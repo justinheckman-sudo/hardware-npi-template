@@ -1,0 +1,23 @@
+{
+  "name": "k1-automation",
+  "description": "K1 Proto build tracking automation skills for weekly reports, build summaries, and backlink validation",
+  "author": {
+    "name": "Justin Heckman",
+    "email": "justin@block.xyz"
+  },
+  "version": "1.0.0",
+  "skills": [
+    {
+      "name": "k1:weekly-report",
+      "description": "Generate comprehensive weekly build status reports"
+    },
+    {
+      "name": "k1:build-summary",
+      "description": "Generate comprehensive build phase retrospective"
+    },
+    {
+      "name": "k1:backlink-validator",
+      "description": "Validate vault backlinks and knowledge graph integrity"
+    }
+  ]
+}

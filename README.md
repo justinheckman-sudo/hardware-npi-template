@@ -21,25 +21,38 @@ This vault provides a complete framework for tracking hardware builds from proto
 
 1. **Clone this repository:**
    ```bash
-   git clone <repository-url>
-   cd k1-kiosk
+   git clone <repository-url> my-program-vault
+   cd my-program-vault
    ```
 
-2. **Customize for your program:**
-   - Update `CLAUDE.md` with your program name (replace "K1" with your program)
-   - Update plugin name in `~/.claude/plugins/local/` (rename `k1-automation` to `yourprogram-automation`)
-   - Update skill names in SKILL.md files (replace `k1:` with `yourprogram:`)
-   - Update vault paths in CLAUDE.md and SKILL.md files
+2. **Install requirements:**
+   - **Obsidian**: https://obsidian.md/
+   - **Claude Code**: https://claude.ai/code
 
-3. **Open in Obsidian:**
-   - Open Obsidian
+3. **Install Claude Code plugin:**
+   ```bash
+   # Copy plugin to Claude's plugin directory
+   cp -r .claude-plugin-template ~/.claude/plugins/local/k1-automation
+
+   # Restart Claude Code
+   ```
+
+4. **Customize for your program** (optional, 15-30 min):
+   - See `QUICK-START.md` for automated customization
+   - See `TEMPLATE-CUSTOMIZATION.md` for detailed manual steps
+   - Or use as-is for K1 tracking
+
+5. **Open in Obsidian:**
+   - Launch Obsidian
    - "Open folder as vault"
-   - Select the cloned directory
+   - Select the `my-program-vault` directory
 
-4. **Restart Claude Code:**
-   - Skills will be recognized after restart
-   - Navigate to your vault directory
-   - Start using `/yourprogram:weekly-report` and other skills
+6. **Verify setup:**
+   - Navigate to vault in terminal
+   - Run Claude Code
+   - Test: `/k1:weekly-report` should show as available skill
+
+**Detailed guide:** See `QUICK-START.md` for complete 30-minute setup walkthrough.
 
 ## 📁 Directory Structure
 
