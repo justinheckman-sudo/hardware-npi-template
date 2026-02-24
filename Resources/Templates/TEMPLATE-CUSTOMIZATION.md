@@ -167,7 +167,28 @@ git commit -m "Initial commit: YourProgram vault based on K1 template
 - Ready for team use"
 ```
 
-### Step 9: Validate Setup
+### Step 9: Configure MCP Servers
+
+The vault includes a pre-configured `.claude/mcp.json` with two MCP servers — **Glean** (enterprise search) and **Google Drive** (document sync). These are checked into the repo so they're available to all users automatically.
+
+**Glean MCP (included, requires `uv`)**
+
+The Glean MCP uses OAuth browser authentication — no tokens or secrets to manage.
+
+**Prerequisite:** Install `uv` if not already installed:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+On first use, Glean will open a browser window for OAuth authentication. Once authenticated, it stays active for your session.
+
+> **Note:** This uses the Square-internal Glean fork (`mcp_glean` via `uvx`). If adapting for a non-Square organization, update the server entry in `.claude/mcp.json` to use your organization's Glean MCP package.
+
+**Google Drive MCP (optional setup)**
+
+See `GOOGLE-DRIVE-MCP-SETUP.md` for the full Google Drive setup guide (10-15 minutes).
+
+### Step 10: Validate Setup
 
 **Checklist:**
 - [ ] All references to "K1" updated to your program name
@@ -178,6 +199,8 @@ git commit -m "Initial commit: YourProgram vault based on K1 template
 - [ ] Build phase directories created
 - [ ] Git initialized and .gitignore configured
 - [ ] README.md updated with your information
+- [ ] `uv` installed for Glean MCP (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
+- [ ] Glean OAuth completed on first use (browser prompt)
 
 **Test automation:**
 1. Restart Claude Code

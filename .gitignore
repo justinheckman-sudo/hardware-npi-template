@@ -24,8 +24,9 @@
 .DocumentRevisions-V100
 .TemporaryItems
 
-# Claude session data (local only)
-.claude/
+# Claude session data (local only — except shared MCP config)
+.claude/*
+!.claude/mcp.json
 
 # Google Drive sync state (local only)
 .sync_drive_k1_state.json

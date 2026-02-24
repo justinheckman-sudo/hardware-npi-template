@@ -1,0 +1,21 @@
+{
+  "mcpServers": {
+    "glean": {
+      "command": "uvx",
+      "args": [
+        "mcp_glean@latest"
+      ]
+    },
+    "gdrive": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-gdrive"
+      ],
+      "env": {
+        "VAULT_NAME": "hardware-npi-template",
+        "PROGRAM_NAME": "K1"
+      }
+    }
+  }
+}
