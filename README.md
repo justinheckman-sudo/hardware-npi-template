@@ -1,10 +1,10 @@
-# K1 Kiosk - Hardware Build Tracking Template
+# Hardware NPI Build Tracking Template
 
 **A comprehensive Obsidian vault template for hardware NPI (New Product Introduction) program management.**
 
 This vault provides a complete framework for tracking hardware builds from prototype through production, with automated reporting, issue tracking, and knowledge management.
 
-## 🎯 What This Template Provides
+## What This Template Provides
 
 - **Daily Build Tracking** - Standardized daily build reports with consistent formatting
 - **Automated Weekly Reports** - Claude Code skills for synthesizing weekly status
@@ -15,7 +15,7 @@ This vault provides a complete framework for tracking hardware builds from proto
 - **Backlink Validation** - Automated knowledge graph integrity checks
 - **Git Integration** - Version control with proper .gitignore for Obsidian vaults
 
-## 🚀 Quick Start
+## Quick Start
 
 ### For New Teams
 
@@ -28,6 +28,7 @@ This vault provides a complete framework for tracking hardware builds from proto
 2. **Install requirements:**
    - **Obsidian**: https://obsidian.md/
    - **Claude Code**: https://claude.ai/code
+   - **uv** (for Glean MCP): `curl -LsSf https://astral.sh/uv/install.sh | sh`
 
 3. **Run the installer:**
    ```bash
@@ -53,7 +54,7 @@ This vault provides a complete framework for tracking hardware builds from proto
 
 **Detailed guide:** See `QUICK-START.md` for complete 30-minute setup walkthrough.
 
-## 📁 Directory Structure
+## Directory Structure
 
 ```
 hardware-npi-template/
@@ -97,7 +98,7 @@ hardware-npi-template/
 └── .gitattributes              # Git attributes for text files
 ```
 
-## 🛠 Included Automations
+## Included Automations
 
 ### Claude Code Skills
 
@@ -116,6 +117,15 @@ Located in `~/.claude/plugins/local/hardware-npi-automation/` (rename for your p
 | **Weekly Briefing** | `/hub:briefing [date]` | Personal weekly prep briefing | ~5 min |
 | **Backlink Validator** | `/hub:backlinks` | Validate vault knowledge graph integrity | ~2 min |
 
+### MCP Servers (pre-configured)
+
+The `.claude/mcp.json` is checked into the repo and configures two MCP servers automatically:
+
+| Server | Purpose | Auth |
+|--------|---------|------|
+| **Glean** | Enterprise search across your org's knowledge base | OAuth browser flow on first use |
+| **Google Drive** | Sync documents from Drive into the vault | OAuth — see `GOOGLE-DRIVE-MCP-SETUP.md` |
+
 ### Available Templates
 
 Located in `Resources/Templates/`:
@@ -125,59 +135,60 @@ Located in `Resources/Templates/`:
 - Risk document template
 - Meeting agenda template
 
-## 📋 File Naming Conventions
+## File Naming Conventions
 
 **Daily Build Reports**: `YYYY-MM-DD-[Program]-[Phase]-DX.md`
-- Example: `2026-02-02-K1-Proto-D1.md`
+- Example: `2026-02-02-MyProgram-Proto-D1.md`
 
 **Weekly Reports**: `YYYY-MM-DD-[Program]-Weekly.md`
-- Example: `2026-02-07-K1-Weekly.md`
+- Example: `2026-02-07-MyProgram-Weekly.md`
 
 **Decision Documents**: `YYYY-MM-DD-[Program]-Decision-[Topic].md`
-- Example: `2026-01-15-K1-Decision-ATE-Strategy.md`
+- Example: `2026-01-15-MyProgram-Decision-ATE-Strategy.md`
 
 **Risk Documents**: `RISK-XXX-[Program]-[Title].md`
-- Example: `RISK-001-K1-Battery-Life.md`
+- Example: `RISK-001-MyProgram-Battery-Life.md`
 
 **Meeting Notes**: `YYYY-MM-DD-[Program]-[Meeting-Type].md`
-- Example: `2026-02-03-K1-Core-Team-Agenda.md`
+- Example: `2026-02-03-MyProgram-Core-Team-Agenda.md`
 
 **Date Format**: Always use **YYYY-MM-DD** for sortability
 
-## 🎨 Customization Guide
+## Customization Guide
 
-See `TEMPLATE-CUSTOMIZATION.md` for detailed instructions on:
-- Renaming the program (K1 → Your Program)
+See `Resources/Templates/TEMPLATE-CUSTOMIZATION.md` for detailed instructions on:
+- Renaming the program to match your program name
 - Updating automation skills
 - Customizing CLAUDE.md
 - Adapting templates
 - Adding new build phases
 - Extending automation
 
-## 🔧 Requirements
+## Requirements
 
 - **Obsidian** - https://obsidian.md/
 - **Claude Code** - https://claude.ai/code
+- **uv** - For Glean MCP (`curl -LsSf https://astral.sh/uv/install.sh | sh`)
 - **Git** (optional) - For version control
 
-## 📚 Documentation
+## Documentation
 
 - **CLAUDE.md** - Comprehensive instructions for Claude Code on how to work with this vault
 - **SETUP-GUIDE.md** - Claude Code automation setup and usage
 - **GIT-SETUP-GUIDE.md** - Git configuration and workflow
 - **GOOGLE-DRIVE-MCP-SETUP.md** - Google Drive MCP server setup for document sync
-- **TEMPLATE-CUSTOMIZATION.md** - How to adapt this template for your program
+- **Resources/Templates/TEMPLATE-CUSTOMIZATION.md** - How to adapt this template for your program
 
-## 🎯 Use Cases
+## Use Cases
 
 This template is designed for:
-- **Hardware NPI Programs** - EVT, DVT, PVT, MP phases
+- **Hardware NPI Programs** - Proto, EVT, DVT, PVT, MP phases
 - **Build Tracking** - Daily status, issues, metrics
 - **Cross-Functional Teams** - Engineering, manufacturing, quality, operations
 - **Executive Reporting** - Weekly status, gate reviews, readiness assessments
 - **Knowledge Management** - Decisions, risks, technical notes, meeting history
 
-## 🏗 Build Phases
+## Build Phases
 
 The template supports multiple build phases:
 - **Proto** (Prototype) - Initial prototypes for design validation
@@ -188,22 +199,15 @@ The template supports multiple build phases:
 
 Add new phases by creating directories under `Builds/` following the existing structure.
 
-## 🤝 Contributing
+## Contributing
 
-This template is based on production NPI program management workflows. Feedback and improvements welcome!
+This template is based on production NPI program management workflows. Feedback and improvements welcome via issues and pull requests.
 
-## 📄 License
+## License
 
 This template is provided as-is for hardware program management. Adapt freely for your organization's needs.
-
-## 🔗 Related
-
-- **Original W3 Setup** - `/Users/jheckman/w3-hw-wallet/` (reference implementation)
-- **Claude Code Documentation** - https://claude.ai/code
-- **Obsidian Documentation** - https://help.obsidian.md/
 
 ---
 
 **Version:** 1.0.0
 **Last Updated:** 2026-02-24
-**Maintained By:** Justin Heckman (justin@block.xyz)
