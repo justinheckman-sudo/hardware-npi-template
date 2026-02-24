@@ -32,7 +32,9 @@ This document explains the Claude Code environment setup for the K1 Kiosk vault 
 
 **First time setup:**
 1. Restart Claude Code to activate skills (one-time)
-2. (Optional) Configure Google Drive MCP - see `GOOGLE-DRIVE-MCP-SETUP.md` (10-15 min)
+2. Install `uv` for Glean MCP: `curl -LsSf https://astral.sh/uv/install.sh | sh`
+3. On first Glean use, authenticate via browser OAuth (prompted automatically)
+4. (Optional) Configure Google Drive MCP - see `GOOGLE-DRIVE-MCP-SETUP.md` (10-15 min)
 
 ## 📦 What Was Configured
 
@@ -204,7 +206,25 @@ hardware-npi-automation/
 
 All skills are **fully documented in CLAUDE.md** with complete instructions, data sources, and validation checklists.
 
-### 7. Google Drive Integration (Optional)
+### 7. Glean MCP (Pre-configured)
+
+**Configuration:** `.claude/mcp.json` (checked into repo — no setup required)
+
+**Prerequisite:** `uv` must be installed:
+```bash
+curl -LsSf https://astral.sh/uv/install.sh | sh
+```
+
+**Authentication:** On first use, Glean opens a browser window for OAuth. No tokens or secrets to manage.
+
+**Capabilities once authenticated:**
+- Search across your organization's knowledge base (Confluence, Docs, Slack, Jira, etc.)
+- Ask questions and get AI-synthesized answers from enterprise content
+- Use a specific Glean agent by setting `APPLICATION_ID` env var (optional)
+
+> This uses the Square-internal `mcp_glean` package via `uvx`. If adapting for a non-Square organization, update the server entry in `.claude/mcp.json`.
+
+### 8. Google Drive Integration (Optional)
 
 **Setup guide:** `GOOGLE-DRIVE-MCP-SETUP.md`
 
@@ -218,14 +238,14 @@ All skills are **fully documented in CLAUDE.md** with complete instructions, dat
 
 **Time to setup:** 10-15 minutes (includes OAuth authentication)
 
-### 8. Git Configuration
+### 9. Git Configuration
 
 **Files configured:**
 - ✅ `.gitignore` - Optimized for Obsidian vaults (ignores workspace, cache, .claude/)
 - ✅ `.gitattributes` - Line ending management (LF for markdown/JSON)
 - ✅ `GIT-SETUP-GUIDE.md` - Complete git workflow documentation
 
-### 9. Example Content
+### 10. Example Content
 
 **Included:**
 - ✅ 9 daily build reports (K1 Proto D1-D9)
@@ -608,6 +628,7 @@ Before distributing to teams, verify:
 - [ ] Example content included (9 daily reports)
 - [ ] CLAUDE.md up to date (27KB, 750+ lines)
 - [ ] All 10 skills fully embedded in CLAUDE.md
+- [ ] `uv` installed and Glean OAuth completed on first use
 - [ ] Google Drive MCP setup guide complete
 - [ ] Customization guide complete
 
