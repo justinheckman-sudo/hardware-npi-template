@@ -1,0 +1,78 @@
+# Obsidian workspace and cache files
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/workspace
+.obsidian/cache
+
+# Obsidian appearance (optional - uncomment if you want to ignore theme settings)
+# .obsidian/appearance.json
+
+# Trash directory
+.trash/
+.Trash/
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# macOS Spotlight and Finder
+.Spotlight-V100
+.Trashes
+.fseventsd
+.DocumentRevisions-V100
+.TemporaryItems
+
+# Claude session data (local only)
+.claude/
+
+# Google Drive sync state (local only)
+.sync_drive_k1_state.json
+.sync_drive_*.json
+
+# Backup files
+*.bak
+*.backup
+*~
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+
+# Lock files
+*.lock
+
+# Python cache (if any automation scripts)
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Node modules (if any)
+node_modules/
+
+# Environment files
+.env
+.env.local
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Large binary files that shouldn't be in git
+*.pdf
+*.zip
+*.tar.gz
+*.dmg
+*.pkg
+
+# Optional: Uncomment if you want to ignore specific Obsidian plugins
+# .obsidian/plugins/
+
+# Optional: Uncomment if you have private/sensitive content folders
+# Private/
+# Sensitive/

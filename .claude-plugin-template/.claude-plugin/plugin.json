@@ -1,0 +1,51 @@
+{
+  "name": "hardware-npi-automation",
+  "description": "Hardware NPI program automation skills with unified command interface for build quality analysis, reporting, and validation",
+  "author": {
+    "name": "Justin Heckman",
+    "email": "justin@block.xyz"
+  },
+  "version": "2.0.0",
+  "skills": [
+    {
+      "name": "hub:help",
+      "description": "Show all available automation commands"
+    },
+    {
+      "name": "hub:weekly-report",
+      "description": "Generate comprehensive weekly build status reports"
+    },
+    {
+      "name": "hub:build-summary",
+      "description": "Generate comprehensive build phase retrospective"
+    },
+    {
+      "name": "hub:mil",
+      "description": "Extract Manufacturing Issue Log from daily reports"
+    },
+    {
+      "name": "hub:master-mil",
+      "description": "Aggregate issues across all build phases"
+    },
+    {
+      "name": "hub:readiness",
+      "description": "Generate build gate readiness assessment"
+    },
+    {
+      "name": "hub:compare",
+      "description": "Build-over-build quality analysis"
+    },
+    {
+      "name": "hub:agenda",
+      "description": "Generate weekly core team meeting agenda"
+    },
+    {
+      "name": "hub:briefing",
+      "description": "Personal weekly prep briefing"
+    },
+    {
+      "name": "hub:backlinks",
+      "description": "Validate vault backlinks and knowledge graph integrity"
+    }
+  ]
+}
