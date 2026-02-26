@@ -150,6 +150,14 @@ else
     info "Git not installed (optional — needed for version control)"
 fi
 
+# uv (required for Glean MCP)
+if command -v uv &>/dev/null; then
+    ok "uv: $(command -v uv)"
+else
+    warn "uv not found — required for Glean MCP"
+    info "Install: curl -LsSf https://astral.sh/uv/install.sh | sh"
+fi
+
 # =============================================================================
 # Step 3: Customization (optional)
 # =============================================================================
