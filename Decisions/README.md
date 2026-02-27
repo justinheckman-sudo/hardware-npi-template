@@ -15,9 +15,9 @@ Decisions/
 **Format:** `YYYY-MM-DD-[Program]-Decision-[Topic].md`
 
 **Examples:**
-- `2026-01-15-K1-Decision-ATE-Strategy.md`
-- `2026-02-01-K1-Decision-Fixture-Approach.md`
-- `2026-02-10-K1-Decision-Material-Sourcing.md`
+- `2026-01-15-[PROGRAM]-Decision-ATE-Strategy.md`
+- `2026-02-01-[PROGRAM]-Decision-Fixture-Approach.md`
+- `2026-02-10-[PROGRAM]-Decision-Material-Sourcing.md`
 
 ## Decision Document Structure
 
@@ -76,7 +76,7 @@ Always link decisions to:
 6. Move to `✅ Decided/` when finalized
 
 **Referencing decisions:**
-- In build reports: `[[2026-01-15-K1-Decision-ATE-Strategy]]`
+- In build reports: `[[2026-01-15-[PROGRAM]-Decision-ATE-Strategy]]`
 - In risk docs: Link to decisions that mitigate risks
 - In meetings: Include in agenda or notes
 

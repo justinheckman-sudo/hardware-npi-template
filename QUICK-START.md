@@ -7,7 +7,7 @@ Get up and running with the Hardware NPI Tracking Template in 30 minutes.
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/justinheckman-sudo/hardware-npi-template.git my-program-vault
+git clone https://github.com/squareup/personal-hw-npi.git my-program-vault
 cd my-program-vault
 ```
 
@@ -48,7 +48,7 @@ Prompt Claude Code with specific customization instructions:
 
 ```
 Customize this hardware NPI template for my program. Please ask me for:
-1. Program name (replaces "K1" throughout)
+1. Program name (replaces "[PROGRAM]" throughout)
 2. Vault directory name (replaces "hardware-npi-template")
 3. Build phase (replaces "Proto" or keep as-is)
 4. Plugin command prefix (keep /hub: or customize to /myprogram:)

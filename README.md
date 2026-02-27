@@ -21,7 +21,7 @@ This vault provides a complete framework for tracking hardware builds from proto
 
 1. **Clone this repository:**
    ```bash
-   git clone https://github.com/justinheckman-sudo/hardware-npi-template.git my-program-vault
+   git clone https://github.com/squareup/personal-hw-npi.git my-program-vault
    cd my-program-vault
    ```
 

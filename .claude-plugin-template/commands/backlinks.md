@@ -1,6 +1,6 @@
 ---
 name: hub:backlinks
-description: Use when the user asks to "validate K1 backlinks", "check K1 backlinks", "fix K1 backlinks", or mentions K1 vault backlink integrity
+description: Use when the user asks to "validate backlinks", "check backlinks", "fix backlinks", or mentions vault backlink integrity
 allowed-tools:
   - Read
   - Write
@@ -9,35 +9,35 @@ allowed-tools:
   - Glob
 ---
 
-# K1 Backlink Validator
+# NPI Backlink Validator
 
-Validate and repair backlinks across the K1 vault to ensure knowledge graph connectivity.
+Validate and repair backlinks across the NPI vault to ensure knowledge graph connectivity.
 
 ## When to Use This Skill
 
 Use this skill when the user:
-- Asks to validate K1 backlinks
-- Mentions "check backlinks" or "fix backlinks" for K1
+- Asks to validate backlinks
+- Mentions "check backlinks" or "fix backlinks"
 - Wants to ensure vault integrity
 - Reports broken or missing cross-references
 
 ## Your Mission
 
-Scan the K1 vault and validate that documents properly reference related documents using wiki-style links.
+Scan the NPI vault and validate that documents properly reference related documents using wiki-style links.
 
 ## Validation Scope
 
 ### Documents to Validate
 
 **Daily Build Reports:**
-- Location: `/Users/jheckman/hardware-npi-template/Builds/Proto/Build Reports/`
+- Location: `/path/to/your-vault/Builds/Proto/Build Reports/`
 - Check for links to:
   - Previous/next daily reports
   - Related Jira issues
   - Slack thread references
 
 **Weekly Reports (if they exist):**
-- Location: `/Users/jheckman/hardware-npi-template/Builds/Proto/Weekly Reports/`
+- Location: `/path/to/your-vault/Builds/Proto/Weekly Reports/`
 - Check for links to:
   - Daily reports for that week
   - Related issues and decisions
@@ -65,9 +65,9 @@ Common backlink issues:
 ### Step 4: Generate Report
 
 ```markdown
-# K1 Backlink Validation Report
+# NPI Backlink Validation Report
 **Validation Date:** [Today's Date]
-**Vault Path:** /Users/jheckman/hardware-npi-template
+**Vault Path:** /path/to/your-vault
 
 ---
 
@@ -123,7 +123,7 @@ If the user requests auto-fix:
 ## Output Location
 
 Save validation report to:
-`/Users/jheckman/hardware-npi-template/Backlink-Validation-Report-YYYY-MM-DD.md`
+`/path/to/your-vault/Backlink-Validation-Report-YYYY-MM-DD.md`
 
 ## Important Notes
 

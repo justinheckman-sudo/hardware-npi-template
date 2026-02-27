@@ -3,7 +3,7 @@
 # Hardware NPI Template - Installer
 #
 # Usage:
-#   ./install.sh              # Install with defaults (K1/hub: prefix)
+#   ./install.sh              # Install with defaults ([PROGRAM]/hub: prefix)
 #   ./install.sh --dry-run    # Preview what would happen
 #   ./install.sh --help       # Show usage
 #
@@ -165,7 +165,7 @@ fi
 step "Customization"
 
 echo ""
-echo -e "  This template is pre-configured for the ${BOLD}K1${NC} program with the ${BOLD}/hub:${NC} command prefix."
+echo -e "  This template uses ${BOLD}[PROGRAM]${NC} as a placeholder (replaced with your program name) and the ${BOLD}/hub:${NC} command prefix."
 echo -e "  You can use it as-is, or customize it for your program now."
 echo ""
 
@@ -174,7 +174,7 @@ if yes_no "Customize for your program?"; then
     CUSTOMIZE=true
 fi
 
-PROGRAM_NAME="K1"
+PROGRAM_NAME="[PROGRAM]"
 VAULT_NAME="$(basename "$VAULT_DIR")"
 CMD_PREFIX="hub"
 VAULT_PATH="$VAULT_DIR"
@@ -182,7 +182,7 @@ PLUGIN_NAME="$DEFAULT_PLUGIN_NAME"
 
 if $CUSTOMIZE; then
     echo ""
-    PROGRAM_NAME="$(prompt "Program name (used in filenames and docs, e.g. W3, Bitkey)" "K1")"
+    PROGRAM_NAME="$(prompt "Program name (used in filenames and docs, e.g. Phoenix, Titan)" "")"
     VAULT_NAME="$(prompt "Vault directory name" "$(basename "$VAULT_DIR")")"
     CMD_PREFIX="$(prompt "Claude Code command prefix (e.g. hub, w3, k1)" "hub")"
 
@@ -264,7 +264,7 @@ fi
 # Step 5: Apply customizations
 # =============================================================================
 
-if $CUSTOMIZE && [[ "$PROGRAM_NAME" != "K1" || "$CMD_PREFIX" != "hub" ]]; then
+if $CUSTOMIZE && [[ "$PROGRAM_NAME" != "[PROGRAM]" || "$CMD_PREFIX" != "hub" ]]; then
     step "Applying customizations"
 
     # Files to update in the vault
@@ -299,12 +299,12 @@ if $CUSTOMIZE && [[ "$PROGRAM_NAME" != "K1" || "$CMD_PREFIX" != "hub" ]]; then
 
         changes=""
 
-        # Replace program name (K1 → PROGRAM_NAME), case-sensitive
-        if [[ "$PROGRAM_NAME" != "K1" ]]; then
-            if grep -q "K1" "$file" 2>/dev/null; then
-                changes="${changes}K1→${PROGRAM_NAME} "
+        # Replace program name ([PROGRAM] → PROGRAM_NAME)
+        if [[ "$PROGRAM_NAME" != "[PROGRAM]" ]]; then
+            if grep -q '\[PROGRAM\]' "$file" 2>/dev/null; then
+                changes="${changes}[PROGRAM]→${PROGRAM_NAME} "
                 if ! $DRY_RUN; then
-                    sed_inplace "s/K1/${PROGRAM_NAME}/g" "$file"
+                    sed_inplace "s/\[PROGRAM\]/${PROGRAM_NAME}/g" "$file"
                 fi
             fi
         fi
@@ -413,7 +413,7 @@ echo -e "  ${BOLD}4.${NC} Verify skills loaded:"
 echo -e "       ${CYAN}/${CMD_PREFIX}:help${NC}"
 echo ""
 
-if $CUSTOMIZE && [[ "$PROGRAM_NAME" != "K1" ]]; then
+if $CUSTOMIZE && [[ "$PROGRAM_NAME" != "[PROGRAM]" ]]; then
     echo -e "  ${BOLD}5.${NC} For deeper customization, ask Claude Code:"
     echo -e "       ${DIM}\"Customize this template for my program [program details]\"${NC}"
     echo ""

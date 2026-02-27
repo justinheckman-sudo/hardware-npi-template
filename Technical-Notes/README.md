@@ -18,9 +18,9 @@ Repository for technical documentation that doesn't fit into daily build reports
 **Format:** `YYYY-MM-DD-[Program]-[Topic].md`
 
 **Examples:**
-- `2026-02-05-K1-Battery-Life-Analysis.md`
-- `2026-02-08-K1-Touch-Validation-Results.md`
-- `2026-02-10-K1-NFC-Tuning-Report.md`
+- `2026-02-05-[PROGRAM]-Battery-Life-Analysis.md`
+- `2026-02-08-[PROGRAM]-Touch-Validation-Results.md`
+- `2026-02-10-[PROGRAM]-NFC-Tuning-Report.md`
 
 ## Document Types
 

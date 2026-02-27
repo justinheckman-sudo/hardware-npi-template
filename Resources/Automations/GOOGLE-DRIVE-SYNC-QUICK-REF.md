@@ -4,22 +4,22 @@
 
 ### Search Google Drive
 ```
-"Search Google Drive for K1 documents"
-"Find K1 build reports from last week"
-"Show recent K1 Proto documents"
+"Search Google Drive for [PROGRAM] documents"
+"Find [PROGRAM] build reports from last week"
+"Show recent [PROGRAM] Proto documents"
 ```
 
 ### Read Documents
 ```
-"Read the K1 Proto Build Summary from Google Drive"
-"Show me the latest K1 MIL from Drive"
+"Read the [PROGRAM] Proto Build Summary from Google Drive"
+"Show me the latest [PROGRAM] MIL from Drive"
 ```
 
 ### Sync to Vault
 ```
-"Sync K1 documents from Google Drive to vault"
-"Sync K1 build reports modified in the last week"
-"Sync all K1 Proto documents from Drive"
+"Sync [PROGRAM] documents from Google Drive to vault"
+"Sync [PROGRAM] build reports modified in the last week"
+"Sync all [PROGRAM] Proto documents from Drive"
 ```
 
 ---
@@ -42,8 +42,8 @@ Documents are automatically routed based on keywords:
 ## ⚙️ Configuration
 
 **Global Config:** `~/.config/claude-code/mcp.json`
-**Vault Config:** `/Users/jheckman/hardware-npi-template/.claude/mcp.json`
-**Sync State:** `.sync_drive_k1_state.json` (auto-generated)
+**Vault Config:** `/path/to/your-vault/.claude/mcp.json`
+**Sync State:** `.sync_drive_state.json` (auto-generated)
 
 ---
 
@@ -51,19 +51,19 @@ Documents are automatically routed based on keywords:
 
 ### Daily Sync Routine
 ```
-"Sync K1 documents modified today from Google Drive"
+"Sync [PROGRAM] documents modified today from Google Drive"
 ```
 
 ### Weekly Full Sync
 ```
-"Sync all K1 documents from Google Drive modified this week"
+"Sync all [PROGRAM] documents from Google Drive modified this week"
 ```
 
 ### Specific Category Sync
 ```
-"Sync K1 build reports from Drive"
-"Sync K1 MIL documents from Drive"
-"Sync K1 meeting notes from Drive"
+"Sync [PROGRAM] build reports from Drive"
+"Sync [PROGRAM] MIL documents from Drive"
+"Sync [PROGRAM] meeting notes from Drive"
 ```
 
 ---
@@ -111,4 +111,4 @@ The sync automatically skips:
 
 ---
 
-**Quick Start:** Just ask Claude Code to search or sync K1 documents from Google Drive!
+**Quick Start:** Just ask Claude Code to search or sync your program documents from Google Drive!

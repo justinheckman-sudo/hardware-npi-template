@@ -13,8 +13,8 @@
         "@modelcontextprotocol/server-gdrive"
       ],
       "env": {
-        "VAULT_NAME": "hardware-npi-template",
-        "PROGRAM_NAME": "K1"
+        "VAULT_NAME": "your-vault",
+        "PROGRAM_NAME": "[YOUR_PROGRAM]"
       }
     }
   }

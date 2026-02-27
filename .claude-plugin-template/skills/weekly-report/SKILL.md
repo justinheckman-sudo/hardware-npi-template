@@ -1,31 +1,31 @@
 ---
-name: k1:weekly-report
-description: This skill should be used when the user asks to "generate K1 weekly report", "create K1 weekly report", mentions "K1 weekly status", or discusses weekly status reporting for the K1 program
+name: hub:weekly-report
+description: This skill should be used when the user asks to "generate weekly report", "create weekly report", or discusses weekly status reporting
 version: 1.0.0
 ---
 
-# K1 Weekly Report Generator
+# NPI Weekly Report Generator
 
-Generate a comprehensive K1 Proto build weekly report using synthesis across daily build reports.
+Generate a comprehensive NPI build weekly report using synthesis across daily build reports.
 
 ## When to Use This Skill
 
 Use this skill when the user:
-- Asks to generate a K1 weekly report
-- Mentions "K1 weekly status" or "K1 weekly build report"
+- Asks to generate a weekly report
+- Mentions "weekly status" or "weekly build report"
 - Requests comprehensive program status for the week
 - Needs an executive-ready weekly build summary
 
 ## Your Mission
 
-Create a HIGH-QUALITY weekly report by synthesizing information from K1 daily build reports for the reporting period.
+Create a HIGH-QUALITY weekly report by synthesizing information from daily build reports for the reporting period.
 
 ## Data Sources to Read and Synthesize
 
 ### 1. Daily Build Reports (PRIMARY SOURCE)
-Location: `/Users/jheckman/hardware-npi-template/Builds/Proto/Build Reports/`
+Location: `/path/to/your-vault/Builds/Proto/Build Reports/`
 
-**Report naming format**: `YYYY-MM-DD-K1-Proto-DX.md` (where X is day number)
+**Report naming format**: `YYYY-MM-DD-[PROGRAM]-Proto-DX.md` (where X is day number)
 
 **For the specified week:**
 1. Identify all daily reports within the reporting period
@@ -84,7 +84,7 @@ Create comprehensive synthesis across all daily reports:
 ### Step 3: Format Output
 
 ```markdown
-# K1 Proto Build - Weekly Report
+# [PROGRAM] Proto Build - Weekly Report
 **Week Ending:** [Date]
 **Build Phase:** Proto
 **Report Date:** [Today's Date]
@@ -166,7 +166,7 @@ Create comprehensive synthesis across all daily reports:
 ## Output Location
 
 Save the generated report to:
-`/Users/jheckman/hardware-npi-template/Builds/Proto/Weekly Reports/YYYY-MM-DD-K1-Proto-Weekly.md`
+`/path/to/your-vault/Builds/Proto/Weekly Reports/YYYY-MM-DD-[PROGRAM]-Proto-Weekly.md`
 
 If the directory doesn't exist, create it.
 
@@ -180,7 +180,7 @@ If the directory doesn't exist, create it.
 
 ## Example Usage
 
-User: "Generate K1 weekly report for 2026-02-07"
+User: "Generate weekly report for 2026-02-07"
 
 Your response:
 1. Identify the week: 2026-02-03 through 2026-02-07

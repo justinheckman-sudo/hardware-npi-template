@@ -1,10 +1,10 @@
-# Git Setup Guide for K1 Kiosk
+# Git Setup Guide for Hardware NPI Vault
 
-This guide walks you through setting up git for the K1 kiosk Obsidian vault.
+This guide walks you through setting up git for your NPI Obsidian vault.
 
 ## Quick Setup
 
-From the hardware-npi-template directory:
+From your vault root directory:
 
 ```bash
 # 1. Initialize git repository
@@ -14,11 +14,11 @@ git init
 git add .
 
 # 3. Create initial commit
-git commit -m "Initial commit: K1 kiosk vault with Claude automation
+git commit -m "Initial commit: NPI vault with Claude automation
 
 - CLAUDE.md project instructions
 - Daily build reports structure
-- K1 automation plugin (weekly-report, backlink-validator)
+- NPI automation plugin (weekly-report, backlink-validator)
 - Git configuration (.gitignore, .gitattributes)
 
 Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
@@ -31,7 +31,7 @@ Co-Authored-By: Claude Sonnet 4.5 <noreply@anthropic.com>"
 ## What's Already Configured
 
 ### .gitignore
-**Location:** `/Users/jheckman/hardware-npi-template/.gitignore`
+**Location:** `/path/to/your-vault/.gitignore`
 
 Configured to ignore:
 - Obsidian workspace and cache files (`.obsidian/workspace.json`, `.obsidian/cache`)
@@ -42,7 +42,7 @@ Configured to ignore:
 - Large binaries (`*.pdf`, `*.zip`)
 
 ### .gitattributes
-**Location:** `/Users/jheckman/hardware-npi-template/.gitattributes`
+**Location:** `/path/to/your-vault/.gitattributes`
 
 Configured for:
 - LF line endings for markdown and JSON files
@@ -61,13 +61,13 @@ git status
 git diff
 
 # Stage specific files
-git add Builds/Proto/Build\ Reports/2026-02-12-K1-Proto-D9.md
+git add Builds/Proto/Build\ Reports/2026-02-12-[PROGRAM]-Proto-D9.md
 
 # Or stage all changes
 git add .
 
 # Commit with descriptive message
-git commit -m "Add K1 Proto D9 build report
+git commit -m "Add [PROGRAM] Proto D9 build report
 
 - SMT progress: 95% complete
 - FATP started with 45 units
@@ -89,7 +89,7 @@ git push
 
 **Good:**
 ```
-docs(build): add K1 Proto Day 9 build report
+docs(build): add [PROGRAM] Proto Day 9 build report
 
 - 95% SMT completion across MLB/SPE/Sensor
 - FATP line started with initial 45 units
@@ -101,7 +101,7 @@ docs(build): add K1 Proto Day 9 build report
 ```
 feat(automation): add weekly report generator skill
 
-Implemented /k1:weekly-report skill to synthesize daily reports
+Implemented /hub:weekly-report skill to synthesize daily reports
 into comprehensive weekly status. Generates executive-ready output
 with build metrics, issues, and trends.
 ```
@@ -219,14 +219,14 @@ Make it executable:
 chmod +x .git/hooks/pre-commit
 ```
 
-## Comparing with W3 Setup
+## Git Best Practices
 
-Your w3-hw-wallet has:
+A well-configured NPI vault has:
 - ✅ Separate git repository
 - ❌ No .gitignore (might want to add one)
 - ✅ Git hooks configured (pre-commit)
 
-Your hardware-npi-template now has:
+This template includes:
 - ✅ Separate git repository (once initialized)
 - ✅ Comprehensive .gitignore
 - ✅ .gitattributes for consistent line endings
@@ -238,7 +238,7 @@ Your hardware-npi-template now has:
 
 **Solution:** Remove parent tracking:
 ```bash
-# This is actually okay - w3-hw-wallet has its own .git
+# Both vaults should have their own .git directories
 # hardware-npi-template should have its own too after `git init`
 ```
 
@@ -266,10 +266,10 @@ git checkout --ours .obsidian/workspace.json
 
 1. **Initialize repository:**
    ```bash
-   cd /Users/jheckman/hardware-npi-template
+   cd /path/to/your-vault
    git init
    git add .
-   git commit -m "Initial commit: K1 kiosk vault"
+   git commit -m "Initial commit: NPI vault"
    ```
 
 2. **Set up remote (optional):**

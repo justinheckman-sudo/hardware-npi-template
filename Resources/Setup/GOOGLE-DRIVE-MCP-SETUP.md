@@ -53,7 +53,7 @@ The MCP server configuration lives in a JSON file that Claude Code reads on star
 
 **Alternative location (for vault-specific config):**
 ```
-/Users/jheckman/hardware-npi-template/.claude/mcp.json
+/path/to/your-vault/.claude/mcp.json
 ```
 
 **Note:** Most users should use the primary location in `~/.config/claude-code/` for global MCP settings.
@@ -152,7 +152,7 @@ Replace `[Document Name]` with an actual document in your Drive.
 ### Test 3: Search for Documents
 
 ```
-"Search Google Drive for documents containing 'K1 Proto'"
+"Search Google Drive for documents containing '[PROGRAM] Proto'"
 ```
 
 **Expected result:** Claude should return matching documents.
@@ -165,18 +165,18 @@ Once configured, Claude Code has access to these Google Drive tools:
 
 | Tool | Purpose | Example |
 |------|---------|---------|
-| **`gdrive_search`** | Search for files by name, content, or modified date | "Find all K1 build reports from last week" |
-| **`gdrive_read`** | Read content of a specific file | "Read the K1 Proto Build Summary" |
-| **`gdrive_list_folders`** | List folders in Drive | "Show me all folders in the K1 Program folder" |
-| **`gdrive_get_file_metadata`** | Get file details (size, modified date, owner) | "When was 'K1 MIL' last modified?" |
+| **`gdrive_search`** | Search for files by name, content, or modified date | "Find all [PROGRAM] build reports from last week" |
+| **`gdrive_read`** | Read content of a specific file | "Read the [PROGRAM] Proto Build Summary" |
+| **`gdrive_list_folders`** | List folders in Drive | "Show me all folders in the [PROGRAM] Program folder" |
+| **`gdrive_get_file_metadata`** | Get file details (size, modified date, owner) | "When was '[PROGRAM] MIL' last modified?" |
 
 **Note:** Exact tool names may vary depending on MCP server version. Use `--verbose` mode in Claude Code to see tool calls.
 
 ---
 
-## Step 6: Configuring for K1 Document Sync
+## Step 6: Configuring for Document Sync
 
-To enable automated syncing of K1 documents from Google Drive to your vault:
+To enable automated syncing of program documents from Google Drive to your vault:
 
 ### 6.1: Create Sync Configuration
 
@@ -185,11 +185,11 @@ Edit `CLAUDE.md` in your vault and add sync instructions:
 ```markdown
 ## Google Drive Sync
 
-Claude Code can sync K1 documents from Google Drive to this vault.
+Claude Code can sync program documents from Google Drive to this vault.
 
 ### Sync Strategy
-- Search for documents with "K1" in the name
-- Search within K1 Program Management folder
+- Search for documents with "[PROGRAM]" in the name
+- Search within your Program Management folder
 - Filter by modified date (only sync new/updated files)
 - Exclude vendor documents: `[EXTERNAL]`, `[Wistron]`, etc.
 
@@ -207,7 +207,7 @@ Documents are automatically categorized and routed:
 ### Usage
 Ask Claude Code to sync documents:
 ```
-"Sync K1 documents from Google Drive to vault"
+"Sync program documents from Google Drive to vault"
 ```
 ```
 
@@ -220,15 +220,15 @@ For automated syncing, create a shell script wrapper:
 ```bash
 #!/bin/bash
 
-# K1 Google Drive Sync Script
-# Syncs K1 documents from Google Drive to Obsidian vault
+# NPI Google Drive Sync Script
+# Syncs program documents from Google Drive to Obsidian vault
 
 set -e
 
-VAULT_PATH="/Users/jheckman/hardware-npi-template"
+VAULT_PATH="/path/to/your-vault"
 
 echo "======================================================================"
-echo "K1 GOOGLE DRIVE SYNC"
+echo "NPI GOOGLE DRIVE SYNC"
 echo "======================================================================"
 echo "Vault Path: $VAULT_PATH"
 echo "Timestamp: $(date '+%Y-%m-%d %H:%M:%S')"
@@ -242,7 +242,7 @@ cd "$VAULT_PATH"
 echo "Requesting sync via Claude Code..."
 echo "Please run this script from within a Claude Code session:"
 echo ""
-echo '  "Sync K1 documents from Google Drive to vault"'
+echo '  "Sync program documents from Google Drive to vault"'
 echo ""
 
 echo "======================================================================"
@@ -272,7 +272,7 @@ chmod +x Resources/Automations/scripts/sync_k1_drive.sh
 
 ### Organization
 
-- **Use naming conventions:** Ensure K1 documents in Drive have consistent naming (e.g., `K1-Proto-Daily-Report-2026-02-16`)
+- **Use naming conventions: Ensure documents in Drive have consistent naming (e.g., `[PROGRAM]-Proto-Daily-Report-YYYY-MM-DD`)
 - **Folder structure:** Organize Drive folders to match vault structure where possible
 - **Vendor filtering:** Exclude vendor documents to avoid syncing external content
 
@@ -351,7 +351,7 @@ chmod +x Resources/Automations/scripts/sync_k1_drive.sh
 
 If you want different MCP settings per vault, use the vault-specific config:
 
-**Create:** `/Users/jheckman/hardware-npi-template/.claude/mcp.json`
+**Create:** `/path/to/your-vault/.claude/mcp.json`
 
 ```json
 {
@@ -363,7 +363,7 @@ If you want different MCP settings per vault, use the vault-specific config:
         "@modelcontextprotocol/server-gdrive"
       ],
       "env": {
-        "VAULT_NAME": "hardware-npi-template"
+        "VAULT_NAME": "your-vault"
       }
     }
   }
@@ -422,18 +422,18 @@ You can run multiple MCP servers simultaneously:
 - **Google Drive API:** https://developers.google.com/drive/api
 - **Claude Code Setup:** [[SETUP-GUIDE]]
 - **Vault Structure:** [[CLAUDE.md]]
-- **W3 Drive Sync Reference:** `/Users/jheckman/w3-hw-wallet/Resources/Documentation/DRIVE-SYNC-README.md`
+
 
 ---
 
 ## Example Workflows
 
-### Workflow 1: Sync K1 Build Reports
+### Workflow 1: Sync Program Build Reports
 
 ```
-User: "Sync all K1 Proto build reports from Google Drive"
+User: "Sync all [PROGRAM] Proto build reports from Google Drive"
 
-Claude: [Searches Drive for "K1 Proto" + "Build Report"]
+Claude: [Searches Drive for "[PROGRAM] Proto" + "Build Report"]
         [Reads each document]
         [Converts to markdown]
         [Saves to Builds/Proto/Build Reports/]
@@ -443,9 +443,9 @@ Claude: [Searches Drive for "K1 Proto" + "Build Report"]
 ### Workflow 2: Find Latest MIL
 
 ```
-User: "What's the latest version of the K1 MIL in Google Drive?"
+User: "What's the latest version of the [PROGRAM] MIL in Google Drive?"
 
-Claude: [Searches for "K1 MIL"]
+Claude: [Searches for "[PROGRAM] MIL"]
         [Sorts by modified date]
         [Shows file metadata]
         [Optionally: reads and summarizes]
@@ -454,7 +454,7 @@ Claude: [Searches for "K1 MIL"]
 ### Workflow 3: Weekly Sync Routine
 
 ```
-User: "Sync all K1 documents modified in the last week"
+User: "Sync all [PROGRAM] documents modified in the last week"
 
 Claude: [Searches with modifiedTime filter]
         [Reads new/updated documents]

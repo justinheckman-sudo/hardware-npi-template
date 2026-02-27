@@ -15,9 +15,9 @@ Risks/
 **Format:** `RISK-XXX-[Program]-[Risk-Title].md`
 
 **Examples:**
-- `RISK-001-K1-Battery-Life.md`
-- `RISK-002-K1-Touch-Enablement.md`
-- `RISK-003-K1-Supply-Chain-Delays.md`
+- `RISK-001-[PROGRAM]-Battery-Life.md`
+- `RISK-002-[PROGRAM]-Touch-Enablement.md`
+- `RISK-003-[PROGRAM]-Supply-Chain-Delays.md`
 
 **Risk ID numbering:**
 - Start at RISK-001
@@ -108,7 +108,7 @@ Obsidian allows you to create a risk register view:
 7. Move to `✅ Resolved/` when closed
 
 **Referencing risks:**
-- In build reports: `[[RISK-001-K1-Battery-Life]]`
+- In build reports: `[[RISK-001-[PROGRAM]-Battery-Life]]`
 - In decisions: Link to risks that decisions address
 - In meetings: Include in agenda for discussion
 

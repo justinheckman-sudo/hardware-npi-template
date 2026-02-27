@@ -1,17 +1,17 @@
-# K1 Kiosk - Claude Setup Guide
+# Hardware NPI Vault - Claude Setup Guide
 
-This document explains the Claude Code environment setup for the K1 Kiosk vault - a complete template for hardware NPI program management.
+This document explains the Claude Code environment setup for the Hardware NPI Vault - a complete template for hardware NPI program management.
 
 ## 🎯 What This Vault Is
 
-**K1 Kiosk** is a **production-ready template** for hardware NPI (New Product Introduction) program management. While configured for K1 Proto build tracking, it's designed to be:
+**Hardware NPI Vault** is a **production-ready template** for hardware NPI (New Product Introduction) program management. Fully generic and ready to customize—it's designed to be:
 
 - ✅ **Cloned and customized** for other hardware programs
-- ✅ **Used as-is** for K1 tracking
+- ✅ **Cloned as-is** as a starting point
 - ✅ **Referenced** for NPI documentation best practices
 - ✅ **Distributed** to other teams via git
 
-**Based on:** Production workflows from W3 Hardware Wallet NPI program
+**Based on:** Production workflows from real NPI programs
 **Structure:** Complete directory organization with templates and automation
 **Documentation:** ~70KB of guides, templates, and instructions
 
@@ -68,7 +68,7 @@ hardware-npi-template/
 
 ### 2. CLAUDE.md (27KB - Comprehensive Instructions)
 
-**Location:** `/Users/jheckman/hardware-npi-template/CLAUDE.md`
+**Location:** `/path/to/your-vault/CLAUDE.md`
 
 **Contains:**
 - Repository overview and template nature
@@ -81,7 +81,7 @@ hardware-npi-template/
 - Build phase documentation structure
 - Document templates overview
 - Vault expansion guide (5 phases)
-- Comparison with W3 setup
+- Comparison with production vault
 
 **Size progression:**
 - Initial: 178 lines (6.7KB)
@@ -128,7 +128,7 @@ Each major directory includes a README explaining:
 - Technical-Notes/
 - Resources/
 
-### 6. K1 Automation Plugin
+### 6. NPI Automation Plugin
 
 **Location:** `~/.claude/plugins/local/hardware-npi-automation/`
 
@@ -163,7 +163,7 @@ hardware-npi-automation/
 
 **`/hub:weekly-report [date]`** - Weekly build status
 - **Purpose:** Generate comprehensive weekly build status reports
-- **Output:** `Communication/Weekly-Updates/YYYY-MM/WXX/YYYY-MM-DD-K1-Proto-Weekly.md`
+- **Output:** `Communication/Weekly-Updates/YYYY-MM/WXX/YYYY-MM-DD-[PROGRAM]-Proto-Weekly.md`
 - **Features:** Executive summary, program highlights, build metrics, issue tracking, trends
 
 **`/hub:build-summary <phase>`** - Build phase retrospective
@@ -193,7 +193,7 @@ hardware-npi-automation/
 
 **`/hub:agenda [date]`** - Weekly core team agenda
 - **Purpose:** Generate weekly core team meeting agenda
-- **Output:** `Meetings/YYYY-MM/WXX/YYYY-MM-DD-K1-Core-Team-Agenda.md`
+- **Output:** `Meetings/YYYY-MM/WXX/YYYY-MM-DD-[PROGRAM]-Core-Team-Agenda.md`
 
 **`/hub:briefing [date]`** - Personal weekly prep briefing
 - **Purpose:** Strategic weekly planning document
@@ -229,7 +229,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 **Setup guide:** `GOOGLE-DRIVE-MCP-SETUP.md`
 
 **Capabilities once configured:**
-- Search Google Drive for K1 documents
+- Search Google Drive for program documents
 - Read document contents (Docs, Sheets, Slides, PDFs)
 - Auto-sync documents to vault with intelligent categorization
 - Track sync state for incremental updates
@@ -248,18 +248,18 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 ### 10. Example Content
 
 **Included:**
-- ✅ 9 daily build reports (K1 Proto D1-D9)
+- ✅ 9 example daily build reports (D1-D9)
 - ✅ Consistent formatting demonstrations
 - ✅ Issue tracking examples (🔴🟡✅)
 - ✅ Cross-referencing patterns
 
 ## 🚀 How to Use
 
-### For K1 Program (As-Is)
+### Getting Started
 
 1. **Navigate to vault:**
    ```bash
-   cd /Users/jheckman/hardware-npi-template
+   cd /path/to/your-vault
    ```
 
 2. **Start Claude Code:**
@@ -269,7 +269,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 3. **Create daily reports:**
    - Prompt: "Create my first daily build report for today"
    - Or use template from `Resources/Templates/daily-build-report-template.md`
-   - Name: `YYYY-MM-DD-K1-Proto-DX.md`
+   - Name: `YYYY-MM-DD-[PROGRAM]-Proto-DX.md`
    - Save to `Builds/Proto/Build Reports/`
 
 4. **Use automation skills:**
@@ -288,7 +288,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 5. **Sync from Google Drive (if configured):**
    ```
-   "Sync K1 documents from Google Drive to vault"
+   "Sync program documents from Google Drive to vault"
    ```
 
 ### For New Programs (Clone & Customize)
@@ -297,7 +297,7 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 
 **Quick steps:**
 1. Clone repository
-2. Find-and-replace program names (K1 → YourProgram)
+2. Find-and-replace program names ([PROGRAM] → YourProgram)
 3. Rename automation plugin (hardware-npi-automation → yourprogram-automation)
 4. Update SKILL.md files with new paths
 5. Update CLAUDE.md with program details
@@ -346,9 +346,9 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
    - Demonstrate 30-minute clone-and-customize workflow
    - Highlight reusable structure for any hardware program
 
-## 📊 Comparison with W3 Setup
+## 📊 Comparison: Template vs Production Vault
 
-| Feature | W3 Vault (Production) | K1 Vault (Template) |
+| Feature | Production Vault | This Template Vault |
 |---------|----------------------|---------------------|
 | **Directory Structure** | ✅ Complete (20 dirs) | ✅ Complete (20 dirs) |
 | **CLAUDE.md** | ✅ 708 lines (34KB) | ✅ 750+ lines (27KB) |
@@ -363,14 +363,14 @@ curl -LsSf https://astral.sh/uv/install.sh | sh
 | **Template-Ready** | ❌ Production-specific | ✅ Clone & customize |
 
 **Key differences:**
-- **W3:** Production vault for specific program
-- **K1:** Reusable template for any hardware program
+- **Production vault:** Tied to a specific program
+- **This template:** Reusable for any hardware program
 
 ## 🔧 Technical Details
 
 ### Skills Fully Embedded in CLAUDE.md
 
-Unlike typical setups where skills are only in SKILL.md files, K1 has **complete skill instructions embedded in CLAUDE.md**:
+Unlike typical setups where skills are only in SKILL.md files, This vault has **complete skill instructions embedded in CLAUDE.md**:
 
 **Benefits:**
 - Self-contained documentation
@@ -411,7 +411,7 @@ Each skill includes:
 ```json
 {
   "name": "hardware-npi-automation",
-  "description": "K1 Proto build tracking automation skills",
+  "description": "Hardware NPI automation skills",
   "author": {
     "name": "Justin Heckman",
     "email": "justin@block.xyz"
@@ -437,7 +437,7 @@ version: 1.0.0
 
 1. Exit Claude Code
 2. Restart Claude Code
-3. Navigate to `/Users/jheckman/hardware-npi-template`
+3. Navigate to `/path/to/your-vault`
 4. Test: `/hub:weekly-report` (should show as available skill)
 
 ### To Add More Skills
@@ -472,7 +472,7 @@ git clone <url> my-program-vault
 cd my-program-vault
 
 # Update program name
-sed -i '' 's/K1/MyProgram/g' CLAUDE.md
+sed -i '' 's/[PROGRAM]/MyProgram/g' CLAUDE.md
 sed -i '' 's/hardware-npi-template/my-program-vault/g' CLAUDE.md
 sed -i '' 's/hub:/myprogram:/g' CLAUDE.md
 
@@ -495,21 +495,21 @@ git commit -m "Initial commit: MyProgram vault"
 **Daily build report:**
 ```bash
 cp Resources/Templates/daily-build-report-template.md \
-   Builds/Proto/Build\ Reports/2026-02-12-K1-Proto-D10.md
+   Builds/Proto/Build\ Reports/2026-02-12-[PROGRAM]-Proto-D10.md
 # Fill in template sections
 ```
 
 **Decision document:**
 ```bash
 cp Resources/Templates/decision-document-template.md \
-   Decisions/2026-02-12-K1-Decision-Topic.md
+   Decisions/2026-02-12-[PROGRAM]-Decision-Topic.md
 # Fill in template sections
 ```
 
 **Risk document:**
 ```bash
 cp Resources/Templates/risk-document-template.md \
-   Risks/RISK-004-K1-Risk-Title.md
+   Risks/RISK-004-[PROGRAM]-Risk-Title.md
 # Fill in template sections
 ```
 
@@ -532,7 +532,7 @@ cp Resources/Templates/risk-document-template.md \
 
 **Solutions:**
 1. Verify daily reports exist for the week
-2. Check naming: `YYYY-MM-DD-K1-Proto-DX.md`
+2. Check naming: `YYYY-MM-DD-[PROGRAM]-Proto-DX.md`
 3. Ensure you're in hardware-npi-template directory when running
 4. Check daily reports follow standard structure
 5. Review CLAUDE.md for expected format
@@ -613,7 +613,7 @@ cp Resources/Templates/risk-document-template.md \
 
 - **Claude Code Documentation:** https://claude.ai/code
 - **Obsidian Documentation:** https://help.obsidian.md/
-- **W3 Reference Vault:** `/Users/jheckman/w3-hw-wallet/`
+- **
 - **Plugin Location:** `~/.claude/plugins/local/hardware-npi-automation/`
 
 ## ✅ Verification Checklist

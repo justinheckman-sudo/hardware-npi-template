@@ -1,6 +1,6 @@
 ---
 name: hub:build-summary
-description: Use when the user asks to "generate K1 build summary", "create build retrospective", "summarize build phase", or mentions completing a build phase (Proto, EVT, DVT, PVT)
+description: Use when the user asks to "generate build summary", "create build retrospective", "summarize build phase", or mentions completing a build phase (Proto, EVT, DVT, PVT)
 argument-hint: <phase>
 allowed-tools:
   - Read
@@ -10,7 +10,7 @@ allowed-tools:
   - Glob
 ---
 
-# K1 Build Summary Generator
+# NPI Build Summary Generator
 
 Generate a comprehensive build phase retrospective by synthesizing all build documentation into a strategic summary.
 
@@ -30,7 +30,7 @@ Create a HIGH-QUALITY, COMPREHENSIVE build summary that synthesizes ALL document
 ## Data Sources to Read and Synthesize
 
 ### 1. Daily Build Reports (PRIMARY SOURCE)
-Location: `/Users/jheckman/hardware-npi-template/Builds/[Phase]/Build Reports/`
+Location: `/path/to/your-vault/Builds/[Phase]/Build Reports/`
 
 **Read ALL daily reports chronologically:**
 - Extract build objectives and goals
@@ -42,7 +42,7 @@ Location: `/Users/jheckman/hardware-npi-template/Builds/[Phase]/Build Reports/`
 - Record timeline milestones
 
 ### 2. Weekly Reports (if available)
-Location: `/Users/jheckman/hardware-npi-template/Builds/[Phase]/Weekly Reports/`
+Location: `/path/to/your-vault/Builds/[Phase]/Weekly Reports/`
 
 **Extract:**
 - Week-over-week trends
@@ -50,7 +50,7 @@ Location: `/Users/jheckman/hardware-npi-template/Builds/[Phase]/Weekly Reports/`
 - Synthesized insights
 
 ### 3. Manufacturing Issue Log (if available)
-Location: `/Users/jheckman/hardware-npi-template/Quality/MIL/`
+Location: `/path/to/your-vault/Quality/MIL/`
 
 **Extract:**
 - Total issues identified
@@ -60,7 +60,7 @@ Location: `/Users/jheckman/hardware-npi-template/Quality/MIL/`
 - Issues carried forward
 
 ### 4. Decisions Made During Build
-Location: `/Users/jheckman/hardware-npi-template/Decisions/`
+Location: `/path/to/your-vault/Decisions/`
 
 **Find decisions dated during build period:**
 - Read decision documents
@@ -68,7 +68,7 @@ Location: `/Users/jheckman/hardware-npi-template/Decisions/`
 - Note impact on build
 
 ### 5. Risk Updates
-Location: `/Users/jheckman/hardware-npi-template/Risks/`
+Location: `/path/to/your-vault/Risks/`
 
 **Find risks identified or updated during build:**
 - New risks identified
@@ -77,7 +77,7 @@ Location: `/Users/jheckman/hardware-npi-template/Risks/`
 - Risks carried forward
 
 ### 6. Technical Notes
-Location: `/Users/jheckman/hardware-npi-template/Technical-Notes/`
+Location: `/path/to/your-vault/Technical-Notes/`
 
 **Find technical analysis from build period:**
 - Validation results
@@ -86,7 +86,7 @@ Location: `/Users/jheckman/hardware-npi-template/Technical-Notes/`
 - Test results
 
 ### 7. Meeting Notes
-Location: `/Users/jheckman/hardware-npi-template/Meetings/`
+Location: `/path/to/your-vault/Meetings/`
 
 **Scan meetings during build period for:**
 - Key decisions made in meetings
@@ -120,9 +120,9 @@ Generate a comprehensive summary covering: Executive Summary, Build Objectives, 
 ## Output Location
 
 Save the generated summary to:
-`/Users/jheckman/hardware-npi-template/Builds/[Phase]/[Phase]-Build-Summary.md`
+`/path/to/your-vault/Builds/[Phase]/[Phase]-Build-Summary.md`
 
-Example: `/Users/jheckman/hardware-npi-template/Builds/Proto/Proto-Build-Summary.md`
+Example: `/path/to/your-vault/Builds/Proto/Proto-Build-Summary.md`
 
 ## Important Notes
 

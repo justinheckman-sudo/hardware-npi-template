@@ -31,9 +31,9 @@ If you're adapting this template for your program, you'll need to:
    ```
 
 3. **Update each SKILL.md:**
-   - Change `name:` from `k1:skill-name` to `yourprogram:skill-name`
+   - Change `name:` from `hub:skill-name` to `yourprogram:skill-name`
    - Update vault paths from `/Users/jheckman/hardware-npi-template/` to your vault path
-   - Update file naming patterns from `K1-Proto` to your program-phase
+   - Update file naming patterns from `[PROGRAM]-Proto` to your program-phase
 
 4. **Restart Claude Code**
 
@@ -61,19 +61,19 @@ hardware-npi-automation/
 
 ## Available Skills
 
-### `/k1:weekly-report [date]`
+### `/hub:weekly-report [date]`
 Generate comprehensive weekly build status reports by synthesizing daily reports.
 
 **Time:** ~5 minutes
-**Output:** `Builds/Proto/Weekly Reports/YYYY-MM-DD-K1-Proto-Weekly.md`
+**Output:** `Builds/Proto/Weekly Reports/YYYY-MM-DD-[PROGRAM]-Proto-Weekly.md`
 
-### `/k1:build-summary <phase>`
+### `/hub:build-summary <phase>`
 Generate comprehensive build phase retrospective with 15 sections.
 
 **Time:** ~10-20 minutes
 **Output:** `Builds/[Phase]/[Phase]-Build-Summary.md`
 
-### `/k1:backlink-validator`
+### `/hub:backlink-validator`
 Validate wiki-style links and identify broken references.
 
 **Time:** ~2 minutes

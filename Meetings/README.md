@@ -15,9 +15,9 @@ Meetings/
 **Format:** `YYYY-MM-DD-[Program]-[Meeting-Type].md`
 
 **Examples:**
-- `2026-02-03-K1-Core-Team-Agenda.md`
-- `2026-02-05-K1-Build-Review.md`
-- `2026-02-10-K1-Risk-Review.md`
+- `2026-02-03-[PROGRAM]-Core-Team-Agenda.md`
+- `2026-02-05-[PROGRAM]-Build-Review.md`
+- `2026-02-10-[PROGRAM]-Risk-Review.md`
 
 ## Meeting Types
 

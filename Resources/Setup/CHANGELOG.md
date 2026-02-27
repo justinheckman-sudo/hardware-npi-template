@@ -22,11 +22,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Decision document template
   - Risk document template
 - Claude Code automation skills (3 production-ready)
-  - `/k1:weekly-report` - Weekly status synthesis (5 min)
-  - `/k1:build-summary` - Build phase retrospective with 15 sections (20 min)
-  - `/k1:backlink-validator` - Vault health check (2 min)
+  - `/hub:weekly-report` - Weekly status synthesis (5 min)
+  - `/hub:build-summary` - Build phase retrospective with 15 sections (20 min)
+  - `/hub:backlink-validator` - Vault health check (2 min)
 - Example content
-  - 9 daily build reports from K1 Proto build (D1-D9)
+  - 9 example daily build reports (D1-D9)
   - Demonstrates consistent formatting and structure
 - Git configuration
   - .gitignore optimized for Obsidian vaults
@@ -36,7 +36,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Appearance settings
 
 ### Documentation
-- Based on production W3 Hardware Wallet NPI workflows
+- Based on production NPI workflows
 - Complete customization guide for adapting to other programs
 - Comprehensive setup guide for Claude Code automation
 - Git workflow documentation for version control
@@ -69,7 +69,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 
 ### Planned
-- `/k1:mil-generator` skill - Extract structured MIL from daily reports
+- `/hub:mil-generator` skill - Extract structured MIL from daily reports
 - Additional document templates (meeting agenda, technical note)
 - More example content across different build phases
 - Video tutorial series

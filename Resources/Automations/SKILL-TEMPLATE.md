@@ -147,7 +147,7 @@ When cloning this template for a new project, search and replace these variables
 | Variable | Example | Description |
 |----------|---------|-------------|
 | `[project]` | `k1`, `w3`, `project-x` | Program/project identifier (lowercase, hyphenated) |
-| `[PROJECT]` | `K1`, `W3`, `Project-X` | Program/project name (properly capitalized) |
+| `[PROJECT]` | `Phoenix`, `Titan`, `Project-X` | Program/project name (properly capitalized) |
 | `[username]` | `jheckman` | Unix username for vault path |
 | `[vault]` | `hardware-npi-template`, `w3-hw-wallet` | Vault directory name |
 | `[skill-name]` | `weekly-report`, `mil`, `readiness` | Skill identifier (lowercase, hyphenated) |
@@ -229,7 +229,7 @@ When cloning this template for a new project, search and replace these variables
 - **Program prefix:** `[PROJECT]-` for program-specific files
 - **Type suffix:** `-Report.md`, `-Summary.md`, `-Assessment.md`
 - **Examples:**
-  - `2026-02-17-K1-NPI-Weekly.md`
+  - `2026-02-17-[PROJECT]-NPI-Weekly.md`
   - `Proto-Build-Summary.md`
   - `DVT-Readiness-Assessment-2026-02-17.md`
 
@@ -237,7 +237,7 @@ When cloning this template for a new project, search and replace these variables
 
 When adapting skills for a new vault structure, update these common paths:
 
-### K1 Structure (Simple)
+### Simple Vault Structure
 ```
 /Users/[username]/hardware-npi-template/
 ├── Builds/[Phase]/
@@ -250,10 +250,10 @@ When adapting skills for a new vault structure, update these common paths:
 └── Technical-Notes/
 ```
 
-### W3 Structure (Comprehensive)
+### Comprehensive Vault Structure (example)
 ```
-/Users/[username]/w3-hw-wallet/
-├── Programs/W3-Hardware-Wallet/
+/path/to/your-vault/
+
 │   ├── Builds/[Phase]/
 │   ├── Quality/MIL/
 │   └── Risks/
@@ -282,7 +282,7 @@ cp ~/.claude/plugins/local/hardware-npi-automation/.claude-plugin/plugin.json \
 ```
 
 ### 3. Update plugin.json
-- Replace `k1` with your project name
+- Replace `[project]` with your project name
 - Update description
 - Set version to `1.0.0`
 
@@ -302,7 +302,7 @@ find ~/.claude/plugins/local/[project]-automation/skills -name "SKILL.md" -exec 
 
 # Replace program name
 find ~/.claude/plugins/local/[project]-automation/skills -name "SKILL.md" -exec \
-  sed -i '' 's/K1/[PROJECT]/g' {} \;
+  sed -i '' 's/[PROJECT]/[PROJECT]/g' {} \;
 ```
 
 ### 6. Restart Claude Code
@@ -360,7 +360,7 @@ Test each skill to verify it works with your vault structure:
 
 ## Version History
 
-**1.0.0** - Initial template based on K1 and W3 automation patterns
+**1.0.0** - Initial template based on production NPI automation patterns
 - 9 core skills (weekly report, build summary, MIL, readiness, compare, master MIL, agenda, briefing, backlinks)
 - Hub-based naming convention
 - Opus-powered synthesis approach
@@ -369,12 +369,12 @@ Test each skill to verify it works with your vault structure:
 ## References
 
 **Example Implementations:**
-- K1 Automation: `~/.claude/plugins/local/hardware-npi-automation/`
-- W3 Automation: `~/.claude/plugins/local/hub/`
+- This template: `~/.claude/plugins/local/hardware-npi-automation/`
+- 
 
 **Documentation:**
-- K1 CLAUDE.md: `/Users/jheckman/hardware-npi-template/CLAUDE.md`
-- W3 CLAUDE.md: `/Users/jheckman/w3-hw-wallet/CLAUDE.md`
+- This template CLAUDE.md: `/path/to/your-vault/CLAUDE.md`
+
 
 ## Contributing
 

@@ -21,7 +21,7 @@ Communication/
 
 **Weekly Updates:**
 - Format: `YYYY-MM-DD-[Program]-Weekly.md`
-- Example: `2026-02-07-K1-Weekly.md`
+- Example: `2026-02-07-[PROGRAM]-Weekly.md`
 
 ## Purpose
 

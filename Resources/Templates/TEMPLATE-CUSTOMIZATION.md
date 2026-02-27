@@ -1,10 +1,10 @@
 # Template Customization Guide
 
-This guide walks you through adapting the K1 Kiosk template for your own hardware program.
+This guide walks you through adapting the Hardware NPI Vault template for your own hardware program.
 
 ## 🎯 Overview
 
-The K1 Kiosk vault is designed as a **universal template** for hardware NPI program management. Follow this guide to customize it for your specific program.
+The Hardware NPI Vault is designed as a **universal template** for hardware NPI program management. Follow this guide to customize it for your specific program.
 
 ## 📝 Step-by-Step Customization
 
@@ -17,7 +17,7 @@ cd my-program-vault
 ```
 
 **Decide on your naming:**
-- Program name: e.g., "W3", "Phoenix", "Titan"
+- Program name: e.g., "Phoenix", "Titan", "Orion"
 - Build phase: e.g., "Proto", "EVT", "DVT"
 - Vault name: e.g., "w3-hw-wallet", "phoenix-tracker"
 
@@ -31,7 +31,7 @@ cd YourPhase/Build\ Reports
 ```
 
 **Update daily report naming:**
-- Old: `YYYY-MM-DD-K1-Proto-DX.md`
+- Old: `YYYY-MM-DD-[PROGRAM]-Proto-DX.md`
 - New: `YYYY-MM-DD-YourProgram-YourPhase-DX.md`
 
 ### Step 3: Customize CLAUDE.md
@@ -40,7 +40,7 @@ cd YourPhase/Build\ Reports
 
 ```bash
 # Program name
-sed -i '' 's/K1/YourProgram/g' CLAUDE.md
+sed -i '' 's/[PROGRAM]/YourProgram/g' CLAUDE.md
 
 # Vault path
 sed -i '' 's/hardware-npi-template/your-vault-name/g' CLAUDE.md
@@ -94,7 +94,7 @@ For each skill in `skills/*/SKILL.md`, update:
 
 2. **File paths**: Replace `/Users/jheckman/hardware-npi-template/` with your vault path
 
-3. **Naming patterns**: Replace `K1-Proto-DX` with `YourProgram-YourPhase-DX`
+3. **Naming patterns**: Replace `[PROGRAM]-Proto-DX` with `YourProgram-YourPhase-DX`
 
 4. **Output locations**: Update output paths for generated reports
 
@@ -116,7 +116,7 @@ For each skill in `skills/*/SKILL.md`, update:
    - Relevant decision types for your program
 
 4. **Risk template:**
-   - Risk ID format: `RISK-XXX-YourProgram-Title`
+   - Risk ID format: `RISK-XXX-[PROGRAM]-Title`
    - Program-specific risk categories
 
 ### Step 6: Customize Terminology
@@ -138,7 +138,7 @@ sed -i '' 's/WMY/YourFactory/g' CLAUDE.md
 ### Step 7: Update README.md
 
 **Customize README.md:**
-1. Replace "K1 Kiosk" with your program name
+1. Replace "[PROGRAM]" with your program name
 2. Update repository URL
 3. Update author information
 4. Add program-specific use cases
@@ -159,7 +159,7 @@ git init
 **Create initial commit:**
 ```bash
 git add .
-git commit -m "Initial commit: YourProgram vault based on K1 template
+git commit -m "Initial commit: YourProgram vault based on this template
 
 - Customized for YourProgram tracking
 - Updated all naming conventions
@@ -191,7 +191,7 @@ See `GOOGLE-DRIVE-MCP-SETUP.md` for the full Google Drive setup guide (10-15 min
 ### Step 10: Validate Setup
 
 **Checklist:**
-- [ ] All references to "K1" updated to your program name
+- [ ] All references to "[PROGRAM]" updated to your program name
 - [ ] All file paths updated to your vault location
 - [ ] Plugin renamed and skills updated
 - [ ] CLAUDE.md customized with your program details
@@ -282,17 +282,17 @@ git commit -m "feat: add custom metric tracking
 - Documented in CLAUDE.md"
 ```
 
-## 📊 Example: W3 → Phoenix Conversion
+## 📊 Example: Template → Phoenix Conversion
 
-**Before (K1/W3):**
-- Vault: `w3-hw-wallet`
-- Program: "W3"
-- Build: "EVT"
-- Plugin: `w3-automation`
-- Skills: `/w3:weekly-report`
+**Before (this template):**
+- Vault: `hardware-npi-template`
+- Program: "[PROGRAM]"
+- Build: "[Phase]"
+- Plugin: `hardware-npi-automation`
+- Skills: `/hub:weekly-report`
 
 **After (Phoenix):**
-- Vault: `phoenix-tracker`
+- Vault: `phoenix-tracker` (renamed)
 - Program: "Phoenix"
 - Build: "Proto"
 - Plugin: `phoenix-automation`
@@ -305,12 +305,12 @@ git clone <url> phoenix-tracker
 cd phoenix-tracker
 
 # Update CLAUDE.md
-sed -i '' 's/K1/Phoenix/g' CLAUDE.md
+sed -i '' 's/[PROGRAM]/Phoenix/g' CLAUDE.md
 sed -i '' 's/hardware-npi-template/phoenix-tracker/g' CLAUDE.md
 sed -i '' 's/k1:/phoenix:/g' CLAUDE.md
 
 # Update plugin
-mv ~/.claude/plugins/local/hardware-npi-automation ~/.claude/plugins/local/phoenix-automation
+
 # Edit plugin.json and SKILL.md files manually
 
 # Initialize git
@@ -355,8 +355,6 @@ git commit -m "Initial commit: Phoenix vault"
 
 ## 📚 Resources
 
-- **Original W3 Reference**: `/Users/jheckman/w3-hw-wallet/`
-- **K1 Template**: This repository
 - **Claude Code Docs**: https://claude.ai/code
 - **Obsidian Help**: https://help.obsidian.md/
 

@@ -11,9 +11,9 @@ This file provides guidance to Claude Code when working with this repository.
 ## Structure
 
 ```
-/Users/jheckman/hardware-npi-template/
+/path/to/your-vault/
 ├── Builds/[Phase]/
-│   ├── Build Reports/          # YYYY-MM-DD-K1-[Phase]-DX.md daily reports
+│   ├── Build Reports/          # YYYY-MM-DD-[PROGRAM]-[Phase]-DX.md daily reports
 │   ├── Weekly Reports/         # Generated weekly summaries
 │   └── [Phase]-Build-Summary.md
 ├── Communication/
@@ -35,12 +35,12 @@ This file provides guidance to Claude Code when working with this repository.
 
 | Document type | Format | Location |
 |---|---|---|
-| Daily Build Reports | `YYYY-MM-DD-K1-[Phase]-DX.md` | `Builds/[Phase]/Build Reports/` |
-| Weekly Reports | `YYYY-MM-DD-K1-Proto-Weekly.md` | `Communication/Weekly-Updates/YYYY-MM/WXX/` |
+| Daily Build Reports | `YYYY-MM-DD-[PROGRAM]-[Phase]-DX.md` | `Builds/[Phase]/Build Reports/` |
+| Weekly Reports | `YYYY-MM-DD-[PROGRAM]-Proto-Weekly.md` | `Communication/Weekly-Updates/YYYY-MM/WXX/` |
 | Weekly Briefing | `YYYY-MM-DD-Weekly-Prep-Briefing.md` | `Communication/Weekly-Updates/YYYY-MM/WXX/` |
-| Core Team Agenda | `YYYY-MM-DD-K1-Core-Team-Agenda.md` | `Meetings/YYYY-MM/WXX/` |
-| Meeting Notes | `YYYY-MM-DD-K1-Meeting-Topic.md` | `Meetings/YYYY-MM/WXX/` |
-| Decisions | `YYYY-MM-DD-K1-Decision-Topic.md` | `Decisions/` |
+| Core Team Agenda | `YYYY-MM-DD-[PROGRAM]-Core-Team-Agenda.md` | `Meetings/YYYY-MM/WXX/` |
+| Meeting Notes | `YYYY-MM-DD-[PROGRAM]-Meeting-Topic.md` | `Meetings/YYYY-MM/WXX/` |
+| Decisions | `YYYY-MM-DD-[PROGRAM]-Decision-Topic.md` | `Decisions/` |
 | MIL Documents | `[Phase]-Manufacturing-Issue-Log.md` | `Quality/MIL/` |
 | Daily Updates | `Daily_Vault_Update_YYYY-MM-DD.md` | `Communication/Daily-Updates/YYYY-MM/` |
 
@@ -79,8 +79,8 @@ Invoke with `/hub:<name>`. **Prefer skills over manual drafting for executive/hi
 
 ## Cross-Referencing
 
-- Build reports: `[[2026-02-02-K1-Proto-D1]]`
-- Decisions: `[[2026-02-01-K1-ATE-Fixture-Decision]]`
+- Build reports: `[[2026-02-02-[PROGRAM]-Proto-D1]]`
+- Decisions: `[[2026-02-01-[PROGRAM]-ATE-Fixture-Decision]]`
 - Issues: `[EE-XXXX](https://your-jira-instance/browse/EE-XXXX)`
 - All documents should link to related docs to create a knowledge graph
 
@@ -108,7 +108,7 @@ Invoke with `/hub:<name>`. **Prefer skills over manual drafting for executive/hi
 Always use `[[wikilinks]]` for decisions. Include Owner/DRI, Date, Impact, and link.
 
 ```markdown
-**ATE Fixture Approach: WBF Fixture** - [[2026-02-01-K1-ATE-Fixture-Decision]]
+**ATE Fixture Approach: WBF Fixture** - [[2026-02-01-[PROGRAM]-ATE-Fixture-Decision]]
 - **Decision:** Use WBF fixture for Proto main build testing (ETA WMY 2/5)
 - **Owner:** Test Engineering Team
 - **Date:** 2026-02-01 | **Impact:** Full test coverage by Day 7
@@ -140,4 +140,4 @@ Agendas use `[UPDATE LIVE]`, `[NEED UPDATE from X team]`, `[NEED CLARITY]` for r
 
 ## Google Drive Integration
 
-Claude Code can sync K1 documents from Google Drive via the Google Drive MCP server. See `GOOGLE-DRIVE-MCP-SETUP.md` for setup. Use `/hub:sync` to pull latest documents.
+Claude Code can sync program documents from Google Drive via the Google Drive MCP server. See `GOOGLE-DRIVE-MCP-SETUP.md` for setup. Use `/hub:sync` to pull latest documents.
